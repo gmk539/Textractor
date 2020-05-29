@@ -1,0 +1,91 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<div>
+    <input type="file" id="file-control" />
+
+    <div class="row" style="margin-top:20px;">
+        <div class="col-sm-7">
+            <div style="border:1px solid #d3d3d3;">
+                <embed type="image/jpeg" id="emb-med"
+                       src="~/Assests/bgImg.jpg"
+                       width="100%"
+                       height="600">
+                <div style="position:absolute;left:0;background:#000000;opacity:0.6;z-index:1;top:0;width:100%;bottom:0;display:none;height:!00%;" class="data-loading">
+
+                </div>
+                <img src="~/Assests/loading.gif" style="position:absolute;width:60px;left:45%;top:45%;z-index:2;display:none;" class="data-loading"/>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="card" id="txt-results" style="display:none;">
+                <div class="card-header bg-success">
+                    Results
+                </div>
+                <div class="card-body" style="max-height:500px;overflow-y:auto;">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px;">
+        <div class="col-sm-7 text-center">
+            <button class="btn btn-md btn-success" id="btn-upload">Upload</button>
+            <button class="btn btn-md btn-secondary">Reset</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function () {
+        //  alert();
+        var formData = new FormData();
+        jQuery('#file-control').change(function () {
+            jQuery('#emb-med').attr('src', URL.createObjectURL(event.target.files[0]));
+            jQuery('#emb-med').attr('type', "application/pdf");
+            // formData.push(event.target.files[0]);
+        });
+
+        jQuery('#btn-upload').on('click', function () {
+            $('.data-loading').toggle();
+            var inputFile = $("#file-control").get(0).files;
+            if (inputFile.length == 0)
+                return;
+            formData.append("Attachment", inputFile[0]);
+            var ajaxRequest = $.ajax({
+                type: "POST",
+                url: "https://localhost:44311/api/values",
+                contentType: false,
+                processData: false,
+                data: formData,
+                success: function (data) {
+                    $('#txt-results').toggle();
+                    $('.data-loading').toggle();
+                    var abc = data;
+                    var htmlTxt;
+                    $('.card-body').append('');
+                    for (var i = 0; i < data.blocks.length; i++) {
+                        if (data.blocks[i].text != undefined && data.blocks[i].text != null) {
+                            if (data.blocks[i].confidence >= 90) {
+                                htmlTxt = htmlTxt + '  ' + "<div style='margin-bottom:10px;display:inline-block;margin:5px;'>" + data.blocks[i].text + '</div>' + '  ' + "<span style='color:gray'>|</span>";
+                            }
+                            else {
+                                htmlTxt = htmlTxt + '  ' + "<div style='margin-bottom:10px;display:inline-block;margin:5px;' class='text-danger'>" + data.blocks[i].text + '</div>' + '  ' + "<span style='color:gray'>|</span>";
+                            }
+                        }
+                    }
+                    $('.card-body').append(htmlTxt);
+                },
+                error: function () {
+                    $('.data-loading').toggle();
+                   
+                }
+            })
+        });
+    });
+
+</script>

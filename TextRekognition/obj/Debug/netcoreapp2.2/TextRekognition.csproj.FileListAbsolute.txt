@@ -1,0 +1,14 @@
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\bin\Debug\netcoreapp2.2\TextRekognition.deps.json
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\bin\Debug\netcoreapp2.2\TextRekognition.runtimeconfig.json
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\bin\Debug\netcoreapp2.2\TextRekognition.runtimeconfig.dev.json
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\bin\Debug\netcoreapp2.2\TextRekognition.dll
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.csprojAssemblyReference.cache
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.csproj.CoreCompileInputs.cache
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.RazorAssemblyInfo.cache
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.RazorAssemblyInfo.cs
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.AssemblyInfoInputs.cache
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.AssemblyInfo.cs
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.RazorTargetAssemblyInfo.cache
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\bin\Debug\netcoreapp2.2\TextRekognition.pdb
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.dll
+C:\Users\mgudipudi\Documents\Workspace\TextRekognition\TextRekognition\obj\Debug\netcoreapp2.2\TextRekognition.pdb
